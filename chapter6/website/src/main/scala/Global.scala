@@ -1,13 +1,14 @@
 import java.io.File
-
 import controllers.Scalate
-import play.api.mvc.{Controller, Action, RequestHeader}
+import play.api.mvc.{Action, Controller, RequestHeader}
 import play.api.GlobalSettings
 import play.core.StaticApplication
 import play.navigator.PlayNavigator
 import play.api.data._
 import play.api.data.Forms._
 import org.preownedkittens.database._
+
+import scala.concurrent.Future
 
 
 object Routes extends PlayNavigator {
@@ -57,7 +58,7 @@ object Application extends Controller {
 }
 
 object Global extends App with GlobalSettings {
-  new play.core.server.NettyServer(new StaticApplication(new File(".")), 9000)
+  new play.core.server.NettyServer(new StaticApplication(new File(".")), Some(9000))
   override def onRouteRequest(request: RequestHeader) = Routes.onRouteRequest(request)
-  override def onHandlerNotFound(request: RequestHeader) = Routes.onHandlerNotFound(request)
+  override def onHandlerNotFound(request: RequestHeader) = Future.successful(Routes.onHandlerNotFound(request))
 }
