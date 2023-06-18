@@ -20,8 +20,9 @@ def PreownedKittenProject(name: String): Project = (
     libraryDependencies += "org.specs2" %% "specs2" % "1.14" % "test",
     javacOptions in Compile ++= Seq("-target", "1.6", "-source", "1.6"),
     resolvers ++= Seq(
-      "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
-      "teamon.eu Repo" at "http://repo.teamon.eu/"
+      "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/",
+      "teamon.eu Repo" at "http://repo.teamon.eu/",
+      "Simple Typesafe" at "https://repo.typesafe.com/typesafe/simple/maven-releases/"
     ),
     exportJars := true
   )

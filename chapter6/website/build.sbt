@@ -2,11 +2,11 @@
 // These are dependencies for Play
 
 libraryDependencies ++= Seq(
-  "play" %% "play" % "2.1.1",
-  "eu.teamon" %% "play-navigator" % "0.4.0",
+  "com.typesafe.play" %% "play" % "2.2.0",
+  "eu.teamon" %% "play-navigator" % "0.5.0",
   "org.webjars" % "jquery" % "1.9.1",
-  "play" %% "anorm" % "2.1.1",
-  "play" %% "play-jdbc" % "2.1.1",
+  "com.typesafe.play" %% "anorm" % "2.2.0",
+  "com.typesafe.play" %% "play-jdbc" % "2.2.0",
   "org.fusesource.scalate" %% "scalate-core" % "1.6.1"
 )
 
